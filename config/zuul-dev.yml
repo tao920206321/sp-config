@@ -10,17 +10,12 @@ spring:
     username: admin
     password: admin
 
-server:
-  port: 3001
+server:  port: 3001
   
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+eureka:  client:    service-url:      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
       
 zuul:
-  routes:
-    item-service: /item-service/**
+  routes:    item-service: /item-service/**
     user-service: /user-service/**
     order-service: /order-service/**
 
@@ -41,8 +36,4 @@ hystrix:
           thread:
             timeoutInMilliseconds: 500
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
+management:  endpoints:    web:      exposure:        include: hystrix.stream
